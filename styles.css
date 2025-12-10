@@ -1,0 +1,556 @@
+/* --- Global Styles & Reset --- */
+:root {
+    --primary-color: #007bff; /* Blue for buttons/accents */
+    --accent-color: #00aaff; /* A lighter blue/cyan for glow/hover */
+    --text-light: #f0f0f0;
+    --text-muted: #aaaaaa;
+    --bg-dark: #12121e; /* Main dark background */
+    --bg-card: #1f293a; /* Darker blue/grey for cards */
+    --bg-hero-overlay: rgba(0, 0, 0, 0.4);
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.2em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--text-light);
+    letter-spacing: 2px;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* Align links to the right */
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--bg-dark);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar .logo {
+    margin-right: auto; /* Push the logo to the left */
+    display: none; /* Hide logo based on the provided UI design */
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-left: 30px;
+}
+
+.navbar nav ul li a {
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* Background style mimicking the image */
+    background: linear-gradient(135deg, #0f4c75, #001f3f);
+    background-image: url('hero-bg-placeholder.jpg'), linear-gradient(135deg, #0f4c75, #001f3f); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+
+    /* Dark overlay/blur effect matching the image */
+    box-shadow: inset 0 0 0 1000px var(--bg-hero-overlay);
+}
+
+.hero-content {
+    z-index: 1;
+}
+
+.hero-logo-icon i {
+    font-size: 4em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px var(--accent-color);
+}
+
+.hero-section h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    color: var(--text-muted);
+}
+
+.hero-buttons .btn {
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 10px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.primary-btn {
+    background-color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    color: var(--bg-dark);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    border: 2px solid var(--text-light);
+    color: var(--text-light);
+}
+
+.primary-btn:hover {
+    background-color: #00bfff;
+    box-shadow: 0 0 15px var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.secondary-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    background-color: rgba(0, 170, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* --- Portfolio Grid (Project Cards) --- */
+.portfolio-grid {
+    background-color: var(--bg-dark);
+}
+
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 170, 255, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.card-content h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.card-content p {
+    color: var(--text-muted);
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.card-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    font-size: 0.8em;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+
+.card-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-dark);
+}
+
+/* --- Core Services Section --- */
+.core-services {
+    padding-top: 50px; /* Reduced padding top */
+    background-color: var(--bg-dark);
+    border-top: 1px solid var(--bg-card); /* Separator line */
+}
+
+.service-icons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.service-item {
+    flex-basis: 150px; /* Base width for each item */
+    margin: 20px 10px;
+}
+
+.service-item i {
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    padding: 20px;
+    transition: transform 0.3s;
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+}
+
+.service-item i:hover {
+    transform: scale(1.1);
+}
+
+.service-item p {
+    font-size: 0.9em;
+    color: var(--text-light);
+    font-weight: 300;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--bg-card);
+    padding: 40px 5% 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 30px;
+}
+
+.footer-logo h3 {
+    font-size: 1.5em;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.footer-logo p {
+    font-size: 0.8em;
+    color: var(--text-muted);
+}
+
+.footer-contact p {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    color: var(--text-muted);
+}
+
+.footer-contact i {
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+.footer-social a {
+    font-size: 1em;
+    margin-left: 20px;
+    color: var(--text-muted);
+}
+
+.footer-social a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.8em;
+    color: var(--text-muted);
+}
+
+/* --- CSS Updates (Add these to your existing styles.css) --- */
+
+/* Style for Active Navigation Link */
+.navbar nav ul li a.active,
+.navbar nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+.navbar nav ul li a.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-color);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+
+/* --- Project Modal Styles --- */
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 200; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+    backdrop-filter: blur(5px); /* Optional: add a blur effect */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: var(--bg-card);
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 30px;
+    border: 1px solid var(--accent-color);
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 170, 255, 0.5);
+    animation: fadeIn 0.3s;
+}
+
+/* Close Button */
+.close-btn {
+    color: var(--text-muted);
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--accent-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h3 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.modal-image-placeholder {
+    padding: 30px;
+    background-color: var(--bg-dark);
+    border-radius: 5px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ensure the about section is styled */
+.about-section {
+    padding: 80px 5%;
+    background-color: var(--bg-dark);
+}
+
+/* --- Responsiveness & Media Queries --- */
+
+/* Target devices up to 768px wide (e.g., Tablets and smaller) */
+@media (max-width: 768px) {
+    /* Adjust Section Padding */
+    section {
+        padding: 60px 4%;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 40px;
+    }
+
+    /* 1. Navigation Bar Adjustments */
+    .navbar {
+        padding: 15px 4%;
+        justify-content: space-between;
+    }
+
+    /* Hide the list and show the logo image */
+    .navbar .logo {
+        display: block; 
+    }
+    .navbar .logo-image {
+        height: 40px; /* Adjust logo size */
+    }
+
+    /* The nav menu is typically hidden and toggled on mobile, but for simplicity, we'll keep it horizontal and slightly condensed */
+    .navbar nav ul {
+        display: none; /* Often hidden on mobile for a hamburger menu. We'll hide it for this simple responsiveness update. */
+    }
+    /* If you want to keep the menu, uncomment below: */
+    /*
+    .navbar nav ul {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    .navbar nav ul li {
+        margin-left: 15px;
+        font-size: 0.9em;
+    }
+    */
+    
+    /* 2. Hero Section */
+    .hero-section {
+        min-height: 450px;
+    }
+
+    .hero-logo-icon i {
+        font-size: 3em;
+        margin-bottom: 15px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5em; /* Reduce large heading size */
+    }
+
+    .hero-section p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 15px;
+    }
+
+    .hero-buttons .btn {
+        width: 80%; /* Make buttons wider */
+        margin: 0 auto;
+        padding: 10px 20px;
+    }
+
+    /* 3. Portfolio Grid */
+    .project-cards {
+        /* This grid setup is already quite responsive, but we can simplify the minimum width */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    /* 4. Core Services */
+    .service-icons {
+        justify-content: center; /* Center items when they wrap */
+    }
+
+    .service-item {
+        flex-basis: 40%; /* Allow two items per row for better spacing */
+        margin: 15px;
+    }
+    
+    .service-item i {
+        font-size: 2em;
+        padding: 15px;
+    }
+    
+    /* 5. Footer */
+    .footer-content {
+        flex-direction: column; /* Stack footer columns vertically */
+        text-align: center;
+    }
+    
+    .footer-logo, .footer-contact, .footer-social {
+        margin-bottom: 20px;
+    }
+
+    .footer-social a {
+        margin: 0 10px;
+    }
+}
+
+/* Target devices up to 480px wide (e.g., Mobile Phones) */
+@media (max-width: 480px) {
+    /* Hero Section */
+    .hero-section h1 {
+        font-size: 2em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+    
+    /* Portfolio Grid - Force single column on very small screens */
+    .project-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Service Items - Ensure full width or nearly full width on small screens */
+    .service-item {
+        flex-basis: 90%; 
+    }
+
+    /* Footer Contact List - Better spacing */
+    .footer-contact p {
+        margin-bottom: 10px;
+    }
+}

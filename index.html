@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextWave Web - Website Development Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <img src="logo.jpg" alt="NextWave Web Logo" class="logo-image">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero-section" id="home">
+    <div class="hero-content">
+        <div class="hero-logo-icon">
+            <i class="fas fa-water"></i>
+        </div>
+        <h1>NextWave Web</h1>
+        <p>Website Development Portfolio</p>
+        <div class="hero-buttons">
+            <a href="#portfolio" class="btn primary-btn">VIEW OUR WORK</a>
+            <a href="#contact" class="btn secondary-btn">CONTACT US</a>
+        </div>
+    </div>
+</section>
+
+<section class="portfolio-grid" id="portfolio">
+    <h2>PORTFOLIO</h2>
+    <div class="project-cards">
+
+        <div class="card">
+            <img src="images.jpeg" alt="Tamrin Online Store Thumbnail">
+            <div class="card-content">
+                <h3>Tamrin Online Store</h3>
+                <p>E-commerce</p>
+                <a href="tamirn_online_store.html" class="btn card-btn">VIEW PROJECT</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="f600n.jpg" alt="Project Beta Thumbnail">
+            <div class="card-content">
+                <h3>Greenbury secondary scool website</h3>
+                <p>Redesign |School website </p>
+                <a href="https://krayolin15.github.io/Greenbury/GREENBURY.html" class="btn card-btn">
+                   VIEW PROJECT
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="21.jpg" alt="Project Gamma Thumbnail">
+            <div class="card-content">
+                <h3>21st_birthday photo taker</h3>
+                <p>photo taker</p>
+                <a href="https://krayolin15.github.io/21stbirthday/21st_birthday.html" class="btn card-btn">
+                   VIEW PROJECT
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="R.jpeg" alt="Project Delta Thumbnail">
+            <div class="card-content">
+                <h3>auto-repair-service</h3>
+                <p>Platform | auto-repair-service</p>
+                <a href="https://krayolin15.github.io/DLB-AUTO-REPAIR/REPAIR.html" class="btn card-btn">
+                   VIEW PROJECT
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="core-services" id="services">
+    <h2>OUR SERVICES</h2>
+    <div class="service-icons">
+        <div class="service-item">
+            <i class="fas fa-code"></i>
+            <p>Custom Web Development</p>
+        </div>
+        <div class="service-item">
+            <i class="fas fa-mobile-alt"></i>
+            <p>Responsive Design</p>
+        </div>
+        <div class="service-item">
+            <i class="fas fa-cogs"></i>
+            <p>CMS Integration Solutions</p>
+        </div>
+        <div class="service-item">
+            <i class="fas fa-paint-brush"></i>
+            <p>UI/UX Design</p>
+        </div>
+        <div class="service-item">
+            <i class="fas fa-shopping-cart"></i>
+            <p>E-commerce Solutions</p>
+        </div>
+        <div class="service-item">
+            <i class="fas fa-wrench"></i>
+            <p>Website Maintenance</p>
+        </div>
+    </div>
+</section>
+
+<section class="about-section" id="about">
+    <h2>ABOUT US</h2>
+    <p style="text-align: center; max-width: 600px; margin: 0 auto; color: var(--text-muted);">
+        We are NextWave Web, a dedicated team passionate about crafting next-generation digital experiences.
+        From custom web applications to compelling e-commerce sites, we build websites that perform.
+    </p>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <h3>NextWave Web</h3>
+            <p>Web Development Portfolio</p>
+        </div>
+
+        <div class="footer-contact" id="contact">
+            <p><i class="fas fa-envelope"></i> Krayolinkisten7@gmail.com</p>
+            <p><i class="fas fa-phone"></i> 0673429856</p>
+            <p><i class="fas fa-map-marker-alt"></i> Rockford, Mount Edgecombe</p>
+        </div>
+
+        <div class="footer-social">
+            <a href="https://www.instagram.com/next_wave_web/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.linkedin.com/in/krayolin-kisten-8b4075202/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 NextWave Web. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- PROJECT MODAL (fixed position outside footer) -->
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3 id="modal-title">Project Title</h3>
+        <p id="modal-description">Project description goes here.</p>
+        <div class="modal-image-placeholder">
+            <i class="fas fa-desktop" style="font-size: 4em; color: var(--accent-color);"></i>
+        </div>
+        <p style="margin-top: 20px; color: var(--text-muted);">
+            This is a demonstration of a project detail modal.
+        </p>
+    </div>
+</div>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
