@@ -54,5 +54,3 @@ We are always open to collaborations and new projects.
 ### 📝 License
 
 © 2024 NextWave Web. All rights reserved. Designed and developed with ❤️ by the NextWave Team.
-
-### How to use this README:
